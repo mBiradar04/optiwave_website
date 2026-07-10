@@ -43,7 +43,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link to="/" className="flex items-center flex-shrink-0">
               <img
-                src="/images/logos/logo.jpeg"
+                src={`${import.meta.env.BASE_URL}images/logos/logo.jpeg`}
                 alt="Clear Communication Systems Ltd."
                 className="h-10 lg:h-12 w-auto"
                 style={{ mixBlendMode: 'screen' }}

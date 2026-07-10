@@ -95,7 +95,7 @@ export default function HeroSection() {
             <>
               <div
                 className="absolute inset-0 bg-cover bg-center animate-ken-burns"
-                style={{ backgroundImage: `url(${slide.image})` }}
+                style={{ backgroundImage: `url(${import.meta.env.BASE_URL}${slide.image.slice(1)})` }}
               />
               <div className="absolute inset-0 bg-primary-900/60" />
             </>

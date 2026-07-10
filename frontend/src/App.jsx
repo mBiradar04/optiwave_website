@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
 import PageLayout from './components/layout/PageLayout'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
@@ -14,9 +14,9 @@ function NotFound() {
       <div className="text-center">
         <h1 className="text-6xl font-bold text-primary-900">404</h1>
         <p className="mt-4 text-gray-500">Page not found</p>
-        <a href="/" className="mt-6 inline-block text-accent-500 hover:underline">
+        <Link to="/" className="mt-6 inline-block text-accent-500 hover:underline">
           Back to home
-        </a>
+        </Link>
       </div>
     </div>
   )

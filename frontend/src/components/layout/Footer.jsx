@@ -28,8 +28,9 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-1">
             <div className="mb-5">
+              {/* TODO: swap for a real footer_logo.png once provided — falling back to the navbar logo file, which exists */}
               <img
-                src="/images/logos/footer_logo.png"
+                src={`${import.meta.env.BASE_URL}images/logos/logo.jpeg`}
                 alt="Clear Communication Systems Ltd."
                 className="h-12 md:h-14 w-auto max-w-[260px]"
               />
