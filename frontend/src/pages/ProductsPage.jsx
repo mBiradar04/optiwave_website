@@ -18,7 +18,7 @@ export default function ProductsPage() {
   })
 
   // Fetch products — re-runs whenever activeType changes
-  const { data: productsData, isLoading } = useQuery({
+  const { data: productsData, isLoading, isError, error } = useQuery({
     queryKey: ['products', activeType],
     queryFn:  () => {
       const params = { is_active: true }
@@ -30,6 +30,8 @@ export default function ProductsPage() {
 
   const types    = typesData?.results   ?? typesData   ?? []
   const products = productsData?.results ?? productsData ?? []
+  const productErrorMessage =
+    error?.response?.data?.detail || error?.message || 'Unable to load products at this time.'
 
   return (
     <>
@@ -39,12 +41,21 @@ export default function ProductsPage() {
         activeType={activeType}
         onSelect={setActiveType}
       />
-      <ProductGrid
-        products={products}
-        isLoading={isLoading}
-        activeType={activeType}
-        onCardClick={setSelectedProduct}
-      />
+      {isError ? (
+        <section className="py-24 bg-steel-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="text-steel-500 font-medium">{productErrorMessage}</p>
+            <p className="text-steel-400 text-sm mt-1">Try refreshing the page or clearing stale login data.</p>
+          </div>
+        </section>
+      ) : (
+        <ProductGrid
+          products={products}
+          isLoading={isLoading}
+          activeType={activeType}
+          onCardClick={setSelectedProduct}
+        />
+      )}
       <ProductModal
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}
