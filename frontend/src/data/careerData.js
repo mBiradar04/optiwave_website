@@ -1,80 +1,79 @@
 // All Career page content in one place.
-// To add or edit a job — update the JOBS array only, no component changes needed.
-// To update culture values — edit the CULTURE array.
+// Update JOBS to add or remove roles. Update CULTURE to change values.
 
-// Replace with actual company careers email before going live
-export const CAREERS_EMAIL = 'careers@defencecompany.com'
+// TODO: Replace with real careers email when provided by client
+export const CAREERS_EMAIL = 'careers@clearcommunicationsystems.com'
 
 export const CULTURE = [
   {
     id:    1,
-    title: 'Mission-driven work',
-    desc:  'Every product we build is used by people who depend on it. Your work here has real, tangible impact on the ground.',
+    title: 'Integrity in everything',
+    desc:  'We operate with honesty, transparency, and strong ethical standards across every project, partnership, and decision.',
   },
   {
     id:    2,
     title: 'Deep technical craft',
-    desc:  'We work on hard engineering problems — RF, embedded firmware, rugged hardware — and we take the craft seriously.',
+    desc:  'We work on genuinely hard engineering problems — RF systems, photonics, optical fiber, embedded firmware — and we take the craft seriously.',
   },
   {
     id:    3,
-    title: 'Ownership from day one',
-    desc:  'Small teams, high trust. You will own meaningful work from the start rather than waiting months to contribute.',
+    title: 'Customer-first execution',
+    desc:  'Every system we build is deployed in a real environment that matters. We prioritise reliability and performance above all else.',
   },
   {
     id:    4,
-    title: 'Grow with the company',
-    desc:  'We are expanding into new markets and product lines. There is room to grow in any direction — technical or leadership.',
+    title: 'Continuous innovation',
+    desc:  'We continuously adopt advanced technologies and creative approaches to stay ahead in a rapidly evolving field. R&D is at the heart of what we do.',
   },
 ]
 
 export const JOBS = [
   {
     id:         1,
-    title:      'Senior Defence Systems Engineer',
+    title:      'RF Systems Engineer',
     department: 'Engineering',
-    location:   'Udupi, Karnataka',
+    location:   'Hyderabad, Telangana',
     type:       'Full-time',
-    desc:       'Design and develop defence communication systems including radio equipment and tactical devices. Work closely with firmware and hardware teams through the full product lifecycle.',
+    desc:       'Design and develop RF over Fiber (RFoF) systems supporting frequency ranges from 0.5 to 18 GHz. Work on signal path design, RF module validation, and system-level integration for defence and telecom applications.',
   },
   {
     id:         2,
-    title:      'RF & Communication Engineer',
+    title:      'Optical Design Engineer',
     department: 'Engineering',
-    location:   'Udupi, Karnataka',
+    location:   'Hyderabad, Telangana',
     type:       'Full-time',
-    desc:       'Develop and test RF circuits for our Walkie Talkie product line. Experience with antenna design, signal propagation, and frequency planning for VHF/UHF bands required.',
+    desc:       'Design optical transmitting units (OTU), optical receiver modules (ORM), and optical delay line systems. Proficiency in photonics, fiber optic components, and optical link budget analysis required.',
   },
   {
     id:         3,
     title:      'Embedded Firmware Developer',
     department: 'Engineering',
-    location:   'Udupi, Karnataka',
+    location:   'Hyderabad, Telangana',
     type:       'Full-time',
-    desc:       'Write and maintain firmware for our communication devices in C/C++. Work with real-time operating systems and low-level hardware peripherals on resource-constrained platforms.',
+    desc:       'Develop embedded firmware for optical and RF control systems in C/C++. Experience with real-time operating systems, hardware-software integration, and performance optimisation on resource-constrained platforms.',
   },
   {
     id:         4,
-    title:      'PCB Design Engineer',
+    title:      'PCB Design Engineer — RF & Optical',
     department: 'Engineering',
-    location:   'Udupi, Karnataka',
+    location:   'Hyderabad, Telangana',
     type:       'Full-time',
-    desc:       'Design multi-layer PCBs for rugged defence-grade electronics. Proficiency with Altium Designer and experience with high-frequency layout techniques required.',
+    desc:       'Design multi-layer PCBs for high-frequency RF and optical systems. Proficiency with Altium Designer, microwave PCB layout techniques, and signal integrity analysis required.',
   },
   {
     id:         5,
-    title:      'Project Manager — Defence',
-    department: 'Operations',
-    location:   'Udupi, Karnataka',
+    title:      'System Integration & Test Engineer',
+    department: 'Engineering',
+    location:   'Hyderabad, Telangana',
     type:       'Full-time',
-    desc:       'Manage delivery of government and institutional defence contracts from kick-off through deployment. Experience with tender processes and government procurement is an advantage.',
+    desc:       'Lead integration, testing, and validation of RFoF and optical communication systems. Responsibilities include RF signal analysis, optical power testing, waveform debugging, and BOM verification.',
   },
   {
     id:         6,
-    title:      'Technical Sales Executive',
+    title:      'Technical Sales Manager — Defence',
     department: 'Sales',
-    location:   'Bangalore / Remote',
+    location:   'Hyderabad / Delhi',
     type:       'Full-time',
-    desc:       'Identify and develop new accounts in defence, security, and enterprise sectors. Ability to understand and present technical products to government and institutional buyers.',
+    desc:       'Develop and manage relationships with defence PSUs, DRDO labs, and institutional clients. Ability to understand and present technical RFoF and photonic solutions to government procurement teams required.',
   },
 ]

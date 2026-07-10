@@ -3,7 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
 // Replace with the actual company email address before going live
-const COMPANY_EMAIL = 'info@defencecompany.com'
+const COMPANY_EMAIL = 'info@clearcommunicationsystems.com'
 
 const schema = z.object({
   name:    z.string().min(2, 'Name must be at least 2 characters'),

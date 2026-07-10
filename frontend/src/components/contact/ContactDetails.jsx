@@ -8,7 +8,7 @@ const DETAILS = [
       </svg>
     ),
     label: 'Head office',
-    value: '123 Defence Road, Udupi, Karnataka 576101, India',
+    value: 'Plot No 70, Road No 9, IDA, Mallapur, Hyderabad, Telangana 500 076',
     href:  null,
   },
   {
@@ -18,8 +18,9 @@ const DETAILS = [
       </svg>
     ),
     label: 'Phone',
-    value: '+91 820 123 4567',
-    href:  'tel:+918201234567',
+    // TODO: Replace with real phone number when provided by client
+    value: '+91 40 1234 5678',
+    href:  'tel:+914012345678',
   },
   {
     icon: (
@@ -28,8 +29,9 @@ const DETAILS = [
       </svg>
     ),
     label: 'Email',
-    value: 'info@defencecompany.com',
-    href:  'mailto:info@defencecompany.com',
+    // TODO: Replace with real email when provided by client
+    value: 'info@clearcommunicationsystems.com',
+    href:  'mailto:info@clearcommunicationsystems.com',
   },
 ]
 

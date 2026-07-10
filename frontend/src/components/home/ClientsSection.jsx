@@ -9,8 +9,7 @@ async function fetchClients() {
 
 // Shown when no clients are in the DB yet — replace with real logos once available
 const FALLBACK_CLIENTS = [
-  'Ministry of Defence', 'State Police', 'Border Security Force',
-  'Indian Railways', 'Municipal Corporation', 'Private Security Group',
+  'BEL', 'DRDO — LRDE', 'DRDO — RCI', 'ISRO', 'HAL', 'DRDO — DLRL',
 ]
 
 export default function ClientsSection() {
