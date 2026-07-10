@@ -30,10 +30,9 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="mb-5">
               <img
-                src="/images/logos/logo.jpeg"
+                src="/images/logos/footer_logo.png"
                 alt="Clear Communication Systems Ltd."
-                className="h-10 w-auto"
-                style={{ mixBlendMode: 'screen' }}
+                className="h-12 md:h-14 w-auto max-w-[260px]"
               />
             </div>
             <p className="text-white/50 text-sm leading-relaxed mb-6">
