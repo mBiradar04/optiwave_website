@@ -30,12 +30,13 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        className="fixed top-0 left-0 right-0 z-50"
+        className="fixed top-0 left-0 right-0 z-50 bg-white"
         animate={{
-          backgroundColor:'#0D1F35',
-          boxShadow: '0 1px 24px rgba(0,0,0,0.35)',
+          boxShadow: scrolled
+            ? '0 2px 20px rgba(0,0,0,0.10)'
+            : '0 1px 0 rgba(0,0,0,0.06)',
         }}
-        transition={{ duration: 0.35, ease: 'easeInOut' }}
+        transition={{ duration: 0.3 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
@@ -43,9 +44,9 @@ export default function Navbar() {
             {/* Logo */}
             <Link to="/" className="flex items-center flex-shrink-0">
               <img
-                src="/images/logos/with_bg_logo.png"
+                src={`${import.meta.env.BASE_URL}images/logos/ccsl_short_logo.png`}
                 alt="Clear Communication Systems Ltd."
-                className="h-12 lg:h-14 w-auto max-w-[280px]"
+                className="h-12 lg:h-16 w-48 lg:w-64 object-fill"
               />
             </Link>
 
@@ -59,8 +60,8 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `px-4 py-2 rounded text-sm font-medium transition-colors duration-200 ${
                       isActive
-                        ? 'text-accent-400'
-                        : 'text-white/70 hover:text-white hover:bg-white/10'
+                        ? 'text-accent-600 bg-accent-50'
+                        : 'text-steel-600 hover:text-primary-800 hover:bg-steel-50'
                     }`
                   }
                 >
@@ -81,22 +82,22 @@ export default function Navbar() {
 
             {/* Mobile hamburger */}
             <button
-              className="lg:hidden text-white p-2 rounded hover:bg-white/10 transition-colors"
+              className="lg:hidden p-2 rounded text-primary-800 hover:bg-steel-100 transition-colors"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             >
               <motion.div animate={menuOpen ? 'open' : 'closed'} className="w-6 h-5 flex flex-col justify-between">
                 <motion.span
                   variants={{ closed: { rotate: 0, y: 0 }, open: { rotate: 45, y: 8 } }}
-                  className="block h-0.5 w-full bg-white rounded origin-left transition-all"
+                  className="block h-0.5 w-full bg-primary-800 rounded origin-left transition-all"
                 />
                 <motion.span
                   variants={{ closed: { opacity: 1 }, open: { opacity: 0 } }}
-                  className="block h-0.5 w-full bg-white rounded"
+                  className="block h-0.5 w-full bg-primary-800 rounded"
                 />
                 <motion.span
                   variants={{ closed: { rotate: 0, y: 0 }, open: { rotate: -45, y: -8 } }}
-                  className="block h-0.5 w-full bg-white rounded origin-left"
+                  className="block h-0.5 w-full bg-primary-800 rounded origin-left"
                 />
               </motion.div>
             </button>
@@ -117,7 +118,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
             />
             <motion.div
-              className="fixed top-0 right-0 h-full w-72 bg-primary-800 z-50 lg:hidden flex flex-col pt-20 pb-8 px-6 shadow-2xl"
+              className="fixed top-0 right-0 h-full w-72 bg-white z-50 lg:hidden flex flex-col pt-20 pb-8 px-6 shadow-2xl border-l border-steel-100"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}

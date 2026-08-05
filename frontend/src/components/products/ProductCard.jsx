@@ -9,7 +9,8 @@ const GRADIENTS = [
 
 export default function ProductCard({ product, index = 0, onClick }) {
   const gradient = GRADIENTS[index % GRADIENTS.length]
-  const image    = product.image_urls?.[0]
+  const rawImage = product.image_urls?.[0]
+  const image    = rawImage && (rawImage.startsWith('/') ? `${import.meta.env.BASE_URL}${rawImage.slice(1)}` : rawImage)
 
   return (
     <motion.div

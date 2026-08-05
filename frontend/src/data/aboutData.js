@@ -1,71 +1,100 @@
-// All About page content lives here.
-// To update — edit this file only. No component changes needed.
+// All About page content in one place.
+// Update this file when content changes — no component changes needed.
 
 export const STRENGTHS = [
   {
     id:    1,
-    title: 'ISO 9001:2015 certified',
-    desc:  'Rigorous quality management systems applied across every stage of design, manufacturing, and delivery.',
+    title: 'RF & Optical Technology Expertise',
+    desc:  'Over two decades of hands-on expertise in RF over Fiber, optical transmitters, receivers, amplifiers, and high-frequency photonic systems.',
   },
   {
     id:    2,
-    title: 'Field-proven technology',
-    desc:  '20+ years of real-world deployment in demanding environments — from police field units to border security forces.',
+    title: 'High Reliability & Performance',
+    desc:  'Our systems are engineered for mission-critical environments — delivering low signal loss, high fidelity, and long-term operational stability.',
   },
   {
     id:    3,
-    title: 'End-to-end capability',
-    desc:  'PCB design, firmware, software, hardware assembly, and after-sales service — all under one roof.',
+    title: 'Scalable & Customisable Solutions',
+    desc:  'From a single optical link to complex multi-channel systems — we tailor every solution to meet specific customer and mission requirements.',
   },
   {
     id:    4,
-    title: 'Defence domain expertise',
-    desc:  'Deep knowledge built through two decades of serving defence agencies, security forces, and government bodies.',
+    title: 'ISO 9001:2015 Quality Standards',
+    desc:  'Committed to ISO 9001:2015 quality management across design, manufacturing, testing, and delivery — ensuring reliable products and services.',
   },
 ]
 
-// Set logo to '/images/partners/name.png' when files are available.
-// Drop images into public/images/partners/.
+// logo paths are relative to the app's BASE_URL (set null when no logo is available).
+// DRDO labs (LRDE/RCI/DLRL/ADRDE) are consolidated under one DRDO logo — see aboutData
+// history / project docs for the full per-lab breakdown if needed elsewhere.
 export const PARTNERS = [
-  { id: 1, name: 'Ministry of Defence', logo: null },
-  { id: 2, name: 'BEL',                 logo: null },
-  { id: 3, name: 'DRDO',                logo: null },
-  { id: 4, name: 'State Police Forces', logo: null },
-  { id: 5, name: 'CRPF',                logo: null },
-  { id: 6, name: 'BSF',                 logo: null },
-  { id: 7, name: 'HAL',                 logo: null },
-  { id: 8, name: 'NIC',                 logo: null },
+  { id: 1, name: 'BEL',     logo: 'images/clients/bel.jpg'  },
+  { id: 2, name: 'DRDO',    logo: 'images/clients/drdo.png' },
+  { id: 3, name: 'ISRO',    logo: 'images/clients/isro.svg' },
+  { id: 4, name: 'HAL',     logo: 'images/clients/hal.png'  },
+  { id: 5, name: 'ComAvia', logo: null },
 ]
 
+// Placeholder testimonials — replace with real client quotes when collected.
 export const TESTIMONIALS = [
   {
     id:    1,
-    name:  'Colonel R. Sharma',
-    org:   'State Police Department',
+    name:  'Senior Engineer, Systems Division',
+    org:   'Bharat Electronics Limited (BEL)',
     stars: 5,
-    text:  'The Walkie Talkie units have been deployed across all our field units for three years now. Reliability has been exceptional — exactly what critical operations demand. After-sales support is equally responsive.',
+    text:  'CCSL has been a dependable partner across multiple RFoF programmes. Their Optical Receiver Modules consistently meet stringent performance specifications, and the engineering team is highly responsive to technical requirements.',
   },
   {
     id:    2,
-    name:  'Supt. A. Patel',
-    org:   'Border Security Unit',
+    name:  'Project Lead, Radar Systems',
+    org:   'DRDO — LRDE',
     stars: 5,
-    text:  'Outstanding build quality and a team that genuinely understands the demands of defence operations. Every product we have sourced has performed beyond specifications in field conditions.',
+    text:  'The optical delay line systems delivered by CCSL demonstrated excellent signal fidelity and met all programme deadlines. Their end-to-end capability — from design through testing — is a significant advantage for complex defence programmes.',
   },
   {
     id:    3,
-    name:  'M. Kumar, Ops Director',
-    org:   'Private Security Corporation',
+    name:  'Systems Integration Manager',
+    org:   'Aerospace & Defence OEM',
     stars: 5,
-    text:  'We transitioned our entire communication fleet to Defence Co. products last year. Performance has exceeded expectations across all units and the technical support team is excellent.',
+    text:  'We have relied on CCSL for fiber optic Tx/Rx systems across several satellite communication projects. Their technical expertise in photonics and commitment to quality make them a trusted long-term partner.',
   },
 ]
 
 export const MILESTONES = [
-  { id: 1, year: '2000', title: 'Company founded',              desc: 'Started as a communication equipment distributor in coastal Karnataka, serving local police and municipal bodies.' },
-  { id: 2, year: '2005', title: 'First defence contract',       desc: 'Secured our first government contract supplying Walkie Talkies and radio equipment to state police forces.' },
-  { id: 3, year: '2010', title: 'Manufacturing begins',         desc: 'Established our own manufacturing facility, transitioning from distribution to in-house production and quality control.' },
-  { id: 4, year: '2015', title: 'ISO 9001:2015 certified',      desc: 'Achieved ISO certification, reinforcing our commitment to quality management across all processes and product lines.' },
-  { id: 5, year: '2018', title: 'International expansion',      desc: 'Extended operations to Southeast Asia and Middle East markets, with products deployed across 15 countries.' },
-  { id: 6, year: '2023', title: 'Technology division launched', desc: 'Dedicated software and firmware division established, complementing hardware expertise with full-stack capabilities.' },
+  {
+    id:    1,
+    year:  '2003',
+    title: 'Founded as Optiwave Photonics Ltd.',
+    desc:  'Established in Hyderabad with a focus on optical communication and photonics technology for defence and telecommunications applications.',
+  },
+  {
+    id:    2,
+    year:  '2006',
+    title: 'First BEL programme delivery',
+    desc:  'Successfully delivered RFoF systems for Bharat Electronics Limited, marking our entry into India\'s strategic defence electronics sector.',
+  },
+  {
+    id:    3,
+    year:  '2010',
+    title: 'Astra ORM programme',
+    desc:  'Delivered Optical Receiver Modules for the Astra missile programme — establishing CCSL as a trusted supplier for critical defence systems.',
+  },
+  {
+    id:    4,
+    year:  '2015',
+    title: 'ISO 9001:2015 certified',
+    desc:  'Achieved ISO 9001:2015 quality management certification, reinforcing our commitment to consistent quality across all processes and deliverables.',
+  },
+  {
+    id:    5,
+    year:  '2018',
+    title: 'ISRO fiber optic programme',
+    desc:  'Delivered fiber optic Tx/Rx systems for the Indian Space Research Organisation, extending our capabilities into satellite communication applications.',
+  },
+  {
+    id:    6,
+    year:  '2023',
+    title: 'Rebranded to Clear Communication Systems Ltd.',
+    desc:  'Renamed to Clear Communication Systems Ltd. (CCSL) to reflect our expanded capabilities across RF, optical, photonic, and system integration domains.',
+  },
 ]

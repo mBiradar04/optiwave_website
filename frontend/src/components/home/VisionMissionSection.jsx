@@ -10,8 +10,8 @@ const CARDS = [
       </svg>
     ),
     label: 'Our Vision',
-    title: 'A Safer, Better-Connected World',
-    body: 'To be the most trusted defence technology partner for governments and organisations across Asia — delivering systems that protect, connect, and empower those who serve on the front lines.',
+    title: 'A Leading Force in Optical Communication',
+    body: 'To become a leading force in optical communication and RFoF technology, known for innovation, reliability, and impact. We aim to drive the evolution of digital infrastructure by enabling smarter, faster, and more scalable networks — while expanding our presence across industries and global markets.',
   },
   {
     icon: (
@@ -20,8 +20,8 @@ const CARDS = [
       </svg>
     ),
     label: 'Our Mission',
-    title: 'Precision-Engineered. Field-Proven.',
-    body: 'To engineer defence and communication products that perform without compromise — combining 20 years of domain expertise with modern technology to deliver systems our clients can stake their operations on.',
+    title: 'Powering the Future of Connectivity',
+    body: 'To power the future of connectivity with high-performance RFoF and fiber-optic solutions. We focus on delivering fast, reliable, and scalable communication systems that help businesses stay ahead — through innovation, engineering excellence, and customer-first execution.',
   },
 ]
 

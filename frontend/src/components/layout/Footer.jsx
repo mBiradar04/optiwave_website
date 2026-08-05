@@ -1,67 +1,63 @@
 import { Link } from 'react-router-dom'
 
 const QUICK_LINKS = [
-  { to: '/about',    label: 'About Us' },
-  { to: '/products', label: 'Products' },
-  { to: '/career',   label: 'Career' },
-  { to: '/news',     label: 'News & Events' },
-  { to: '/gallery',  label: 'Gallery' },
-  { to: '/contact',  label: 'Contact Us' },
+  { to: '/about',    label: 'About Us'     },
+  { to: '/products', label: 'Products'     },
+  { to: '/career',   label: 'Career'       },
+  { to: '/news',     label: 'News & Events'},
+  { to: '/gallery',  label: 'Gallery'      },
+  { to: '/contact',  label: 'Contact Us'   },
 ]
 
-const PRODUCTS = [
-  { to: '/products', label: 'Walkie Talkies' },
-  { to: '/products', label: 'Defence Systems' },
-  { to: '/products', label: 'Commercial Products' },
-  { to: '/products', label: 'Hardware' },
-  { to: '/products', label: 'Software' },
-  { to: '/products', label: 'Firmware' },
+const SOLUTIONS = [
+  { to: '/products', label: 'RF over Fiber (RFoF) Systems'   },
+  { to: '/products', label: 'Optical Delay Lines (ODL)'      },
+  { to: '/products', label: 'Optical Transmitting Units (OTU)'},
+  { to: '/products', label: 'Optical Receiver Modules (ORM)' },
+  { to: '/products', label: 'Photonic Distribution Units'    },
+  { to: '/products', label: 'Optical Components & Instruments'},
 ]
 
 export default function Footer() {
   return (
     <footer className="bg-primary-900 text-white">
 
-      {/* Main footer grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
 
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <div className="mb-5">
+            <div className="mb-5 inline-block bg-white rounded-lg px-3 py-2">
               <img
-                src="/images/logos/footer_logo.png"
+                src={`${import.meta.env.BASE_URL}images/logos/ccsl_short_logo.png`}
                 alt="Clear Communication Systems Ltd."
-                className="h-12 md:h-14 w-auto max-w-[260px]"
+                className="h-12 w-48 object-fill"
               />
             </div>
             <p className="text-white/50 text-sm leading-relaxed mb-6">
-              Precision-engineered defence and communication systems. Trusted by governments
-              and organisations across 15 countries since 2000.
+              Advanced RF & Optical Innovations. Trusted partner of BEL, DRDO,
+              ISRO, and HAL for RF over Fiber and photonic communication systems
+              since 2003.
             </p>
-            {/* Company details */}
             <div className="space-y-2 text-sm text-white/45">
               <div className="flex items-start gap-2">
                 <svg className="w-4 h-4 mt-0.5 text-accent-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                 </svg>
-                {/* Replace with actual address */}
-                <span>123 Defence Road, Udupi, Karnataka 576101</span>
+                <span>Plot No 70, Road No 9, IDA, Mallapur,<br />Hyderabad, Telangana 500 076</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-4 h-4 text-accent-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z" />
                 </svg>
-                {/* Replace with actual phone */}
-                <span>+91 820 123 4567</span>
+                <span>+91 40 2717 8649</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-4 h-4 text-accent-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                 </svg>
-                {/* Replace with actual email */}
-                <span>info@defencecompany.com</span>
+                <span>info@optiwavephotonics.com</span>
               </div>
             </div>
           </div>
@@ -71,29 +67,8 @@ export default function Footer() {
             <h4 className="text-sm font-bold tracking-widest uppercase text-white/80 mb-5">Quick Links</h4>
             <ul className="space-y-2.5">
               {QUICK_LINKS.map((link) => (
-                <li key={link.to}>
-                  <Link
-                    to={link.to}
-                    className="text-white/45 hover:text-accent-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group"
-                  >
-                    <span className="opacity-0 group-hover:opacity-100 transition-opacity">›</span>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Products */}
-          <div>
-            <h4 className="text-sm font-bold tracking-widest uppercase text-white/80 mb-5">Products</h4>
-            <ul className="space-y-2.5">
-              {PRODUCTS.map((link) => (
                 <li key={link.label}>
-                  <Link
-                    to={link.to}
-                    className="text-white/45 hover:text-accent-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group"
-                  >
+                  <Link to={link.to} className="text-white/45 hover:text-accent-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
                     <span className="opacity-0 group-hover:opacity-100 transition-opacity">›</span>
                     {link.label}
                   </Link>
@@ -102,7 +77,22 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Working hours + CTA */}
+          {/* Solutions */}
+          <div>
+            <h4 className="text-sm font-bold tracking-widest uppercase text-white/80 mb-5">Our Solutions</h4>
+            <ul className="space-y-2.5">
+              {SOLUTIONS.map((link) => (
+                <li key={link.label}>
+                  <Link to={link.to} className="text-white/45 hover:text-accent-400 text-sm transition-colors duration-200 flex items-center gap-1.5 group">
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity">›</span>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Hours + CTA */}
           <div>
             <h4 className="text-sm font-bold tracking-widest uppercase text-white/80 mb-5">Business Hours</h4>
             <div className="space-y-2 text-sm text-white/45 mb-8">
@@ -133,19 +123,14 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-white/30 text-xs">
-            © {new Date().getFullYear()} Defence Company. All rights reserved.
+            © {new Date().getFullYear()} Clear Communication Systems Ltd. All rights reserved.
           </p>
           <div className="flex gap-6">
             {['Privacy Policy', 'Terms of Use'].map((item) => (
-              <Link
-                key={item}
-                to="/contact"
-                className="text-white/30 hover:text-white/60 text-xs transition-colors"
-              >
+              <Link key={item} to="/contact" className="text-white/30 hover:text-white/60 text-xs transition-colors">
                 {item}
               </Link>
             ))}

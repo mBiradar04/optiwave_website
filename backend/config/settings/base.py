@@ -26,6 +26,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     'apps.products',
+    'apps.contact',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -110,8 +111,8 @@ REST_FRAMEWORK = {
 }
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Defence Company API',
-    'DESCRIPTION': 'REST API for the Defence Company website',
+    'TITLE': 'Clear Communication Systems Ltd. API',
+    'DESCRIPTION': 'REST API for the Clear Communication Systems Ltd. (CCSL) website',
     'VERSION': '1.0.0',
 }
 
@@ -123,5 +124,5 @@ EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
-DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='noreply@defencecompany.com')
-COMPANY_EMAIL = config('COMPANY_EMAIL', default='info@defencecompany.com')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='noreply@optiwavephotonics.com')
+COMPANY_EMAIL = config('COMPANY_EMAIL', default='info@optiwavephotonics.com')

@@ -1,3 +1,6 @@
+const OFFICE_ADDRESS = 'Plot No 70, Road No 9, IDA, Mallapur, Hyderabad, Telangana 500076'
+const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(OFFICE_ADDRESS)}`
+
 // ── Replace all placeholder values below with real client details ─────────────
 const DETAILS = [
   {
@@ -8,8 +11,8 @@ const DETAILS = [
       </svg>
     ),
     label: 'Head office',
-    value: '123 Defence Road, Udupi, Karnataka 576101, India',
-    href:  null,
+    value: 'Plot No 70, Road No 9, IDA, Mallapur, Hyderabad, Telangana 500 076',
+    href:  MAPS_LINK,
   },
   {
     icon: (
@@ -18,8 +21,18 @@ const DETAILS = [
       </svg>
     ),
     label: 'Phone',
-    value: '+91 820 123 4567',
-    href:  'tel:+918201234567',
+    value: '+91 40 2717 8649',
+    href:  'tel:+914027178649',
+  },
+  {
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+      </svg>
+    ),
+    label: 'Mobile',
+    value: '+91 99639 98505',
+    href:  'tel:+919963998505',
   },
   {
     icon: (
@@ -28,8 +41,8 @@ const DETAILS = [
       </svg>
     ),
     label: 'Email',
-    value: 'info@defencecompany.com',
-    href:  'mailto:info@defencecompany.com',
+    value: 'info@optiwavephotonics.com',
+    href:  'mailto:info@optiwavephotonics.com',
   },
 ]
 
@@ -39,12 +52,7 @@ const HOURS = [
   { day: 'Sunday',          time: 'Closed'             },
 ]
 
-// To get the real Google Maps embed URL:
-// 1. Go to maps.google.com and search the company address
-// 2. Click Share → Embed a map → copy the src URL from the iframe snippet
-// 3. Replace the string below with the copied URL
-const MAP_EMBED_SRC =
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1000!2d74.74!3d13.33!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDE5JzQ4LjAiTiA3NMKwNDQnMjQuMCJF!5e0!3m2!1sen!2sin!4v1000000000000!5m2!1sen!2sin'
+const MAP_EMBED_SRC = `https://www.google.com/maps?q=${encodeURIComponent(OFFICE_ADDRESS)}&output=embed`
 
 export default function ContactDetails() {
   return (
@@ -64,6 +72,8 @@ export default function ContactDetails() {
               {d.href ? (
                 <a
                   href={d.href}
+                  target={d.href.startsWith('http') ? '_blank' : undefined}
+                  rel={d.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className="text-sm text-primary-800 font-medium hover:text-accent-600 transition-colors"
                 >
                   {d.value}
@@ -94,7 +104,7 @@ export default function ContactDetails() {
       </div>
 
       {/* Map */}
-      <div className="rounded-2xl overflow-hidden border border-steel-200">
+      <div className="bg-white rounded-2xl border border-steel-200 overflow-hidden">
         <iframe
           src={MAP_EMBED_SRC}
           width="100%"
@@ -105,6 +115,17 @@ export default function ContactDetails() {
           referrerPolicy="no-referrer-when-downgrade"
           title="Office location map"
         />
+        <a
+          href={MAPS_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 text-sm text-primary-800 font-medium hover:text-accent-600 transition-colors py-3 border-t border-steel-200"
+        >
+          Open in Google Maps
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+          </svg>
+        </a>
       </div>
 
     </div>

@@ -14,21 +14,24 @@ export default function WhoWeAreSection() {
                 Who We Are
               </p>
               <h2 className="text-3xl lg:text-4xl font-bold text-primary-800 mb-6 leading-tight">
-                Two Decades of Defending
-                <span className="text-accent-500"> What Matters Most</span>
+                Two Decades of
+                <span className="text-accent-500"> Advanced RF & Optical Innovation</span>
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
               <p className="text-steel-600 text-base lg:text-lg leading-relaxed mb-5">
-                We are a specialised defence and communication technology company with over
-                20 years of experience engineering products that operate at the edge — where
-                reliability is not optional.
+                Clear Communication Systems Ltd. (CCSL), formerly known as Optiwave Photonics Ltd.,
+                is a technology-driven company committed to delivering advanced and reliable communication
+                solutions. We specialise in RF over Fiber (RFoF) technology — enabling high-performance,
+                scalable, and efficient communication infrastructure for modern telecommunication,
+                defence, and networking needs.
               </p>
               <p className="text-steel-500 text-base leading-relaxed mb-8">
-                From Walkie Talkies deployed in field operations to enterprise-grade software
-                systems, every product we build is subjected to the same rigorous standard:
-                it must work when it matters.
+                At the core of our expertise is the transformation of RF signal transmission through
+                optical fiber technology. Our solutions ensure low signal loss, high bandwidth, superior
+                signal integrity, and long-distance transmission — making them ideal for the most
+                demanding communication environments.
               </p>
             </ScrollReveal>
 
@@ -56,16 +59,13 @@ export default function WhoWeAreSection() {
           {/* Visual */}
           <ScrollReveal direction="left" delay={0.15}>
             <div className="relative">
-              {/* Main image area — replace with real company photo */}
-              <div className="aspect-[4/3] bg-gradient-to-br from-primary-700 to-primary-900 rounded-2xl overflow-hidden shadow-2xl">
-                <div className="w-full h-full flex items-center justify-center text-white/20 text-sm">
-                  Company / facility photo
-                </div>
-              </div>
-              {/* Accent card */}
-              <div className="absolute -bottom-6 -left-6 bg-accent-500 text-primary-900 rounded-xl px-6 py-4 shadow-xl">
-                <div className="text-2xl font-bold">ISO Certified</div>
-                <div className="text-primary-900/70 text-sm font-medium">Quality Management</div>
+              {/* Main image area */}
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src={`${import.meta.env.BASE_URL}images/other/building.jpg`}
+                  alt="Clear Communication Systems Ltd. facility"
+                  className="w-full h-full object-cover"
+                />
               </div>
               {/* Decorative border */}
               <div className="absolute -top-4 -right-4 w-full h-full border-2 border-accent-400/30 rounded-2xl pointer-events-none" />

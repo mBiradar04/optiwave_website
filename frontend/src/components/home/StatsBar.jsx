@@ -3,10 +3,10 @@ import { useInView } from 'react-intersection-observer'
 import ScrollReveal from '../ui/ScrollReveal'
 
 const STATS = [
-  { value: 500, suffix: '+', label: 'Employees' },
-  { value: 20,  suffix: '+', label: 'Years of Experience' },
-  { value: 15,  suffix: '',  label: 'Countries Served' },
-  { value: 100, suffix: '+', label: 'Products Delivered' },
+  { value: 38,  suffix: '+', label: 'Engineering Professionals' },
+  { value: 20,  suffix: '+', label: 'Years of Experience'       },
+  { value: 5,   suffix: '+', label: 'Major Defence Programs'    },
+  { value: 4,   suffix: '+', label: 'Application Sectors'       },
 ]
 
 function StatItem({ stat, inView }) {

@@ -7,65 +7,62 @@ import { motion, AnimatePresence } from 'framer-motion'
 const SLIDES = [
   {
     id: 1,
-    image: '/images/hero/hero-1.png',
+    image: '/images/hero/hero-1.jpeg',
     gradient: 'from-primary-900 via-primary-800 to-primary-700',
-    eyebrow: 'Defence & Communication Systems',
-    headline: ['Precision.', 'Power.', 'Trusted', 'by Nations.'],
-    sub: 'Advanced communication equipment and defence systems built for mission-critical environments worldwide.',
+    eyebrow: 'RF over Fiber Technology',
+    headline: ['Precision.', 'Reliability.', 'Trusted by', 'Defence Leaders.'],
+    sub: 'Advanced RF over Fiber (RFoF) solutions enabling seamless, high-performance signal transmission for defence, telecom, and satellite applications.',
     cta: { label: 'Explore Products', to: '/products' },
   },
   {
     id: 2,
     image: '/images/hero/hero-2.jpeg',
     gradient: 'from-[#0A1628] via-[#0D2137] to-[#1B2E4B]',
-    eyebrow: 'Walkie Talkie — WT-X Series',
-    headline: ['Engineered', 'for the', 'Most Demanding', 'Conditions.'],
-    sub: 'Field-tested across 15 countries. IP67-rated. 15 km range. Built to operate when everything else fails.',
-    cta: { label: 'View WT-X Series', to: '/products' },
+    eyebrow: 'Advanced Photonic Systems',
+    headline: ['Engineered', 'for the', 'Most Demanding', 'Environments.'],
+    sub: 'From Astra ORM programs to DRDO radar systems — our photonic and optical solutions are proven in India\'s most critical defence programmes.',
+    cta: { label: 'Our Solutions', to: '/products' },
   },
   {
     id: 3,
     image: '/images/hero/hero-3.jpeg',
     gradient: 'from-primary-900 via-[#162840] to-[#0D1F35]',
-    eyebrow: 'Commercial Solutions',
-    headline: ['Beyond', 'Defence.', 'Built for', 'Every Industry.'],
-    sub: 'From enterprise communication to software systems — our technology portfolio spans sectors.',
-    cta: { label: 'Our Solutions', to: '/products' },
+    eyebrow: 'Optical Communication Systems',
+    headline: ['Low Signal', 'Loss.', 'High Bandwidth.', 'Long Distance.'],
+    sub: 'Bandwidth from 0.5 to 18 GHz. Ultra-low attenuation over long distances. Built for telecommunications, DAS, satellite, and broadband infrastructure.',
+    cta: { label: 'View Technology', to: '/products' },
   },
   {
     id: 4,
     image: '/images/hero/hero-4.png',
     gradient: 'from-[#070F1A] via-primary-900 to-[#1B2E4B]',
-    eyebrow: '20+ Years of Excellence',
-    headline: ['500+', 'Professionals.', 'One Shared', 'Mission.'],
-    sub: 'Two decades of delivering precision-engineered defence and communication products to governments and organisations.',
+    eyebrow: '20+ Years of Engineering Excellence',
+    headline: ['Design.', 'Develop.', 'Test.', 'Deploy.'],
+    sub: 'Since 2003, CCSL has delivered end-to-end RF and optical communication systems — from concept and design through testing, integration, and field deployment.',
     cta: { label: 'About Us', to: '/about' },
   },
 ]
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0)
-  const [direction, setDirection] = useState(1)
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setDirection(1)
       setCurrent((prev) => (prev + 1) % SLIDES.length)
     }, 6000)
     return () => clearInterval(timer)
   }, [])
 
   const goTo = (idx) => {
-    setDirection(idx > current ? 1 : -1)
     setCurrent(idx)
   }
 
   const slide = SLIDES[current]
 
   const slideVariants = {
-    enter:  (d) => ({ opacity: 0, x: d > 0 ? 60 : -60 }),
-    center: { opacity: 1, x: 0, transition: { duration: 0.50, ease: [0.22, 1, 0.36, 1] } },
-    exit:   (d) => ({ opacity: 0, x: d > 0 ? -60 : 60, transition: { duration: 0.5 } }),
+    enter:  { opacity: 0 },
+    center: { opacity: 1, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+    exit:   { opacity: 0, transition: { duration: 0.5 } },
   }
 
   const wordVariants = {
@@ -81,10 +78,9 @@ export default function HeroSection() {
     <section className="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden">
 
       {/* Background slides */}
-      <AnimatePresence custom={direction} mode="sync">
+      <AnimatePresence mode="sync">
         <motion.div
           key={current}
-          custom={direction}
           variants={slideVariants}
           initial="enter"
           animate="center"
@@ -95,7 +91,7 @@ export default function HeroSection() {
             <>
               <div
                 className="absolute inset-0 bg-cover bg-center animate-ken-burns"
-                style={{ backgroundImage: `url(${slide.image})` }}
+                style={{ backgroundImage: `url(${import.meta.env.BASE_URL}${slide.image.slice(1)})` }}
               />
               <div className="absolute inset-0 bg-primary-900/60" />
             </>

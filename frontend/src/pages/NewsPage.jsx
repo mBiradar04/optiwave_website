@@ -1,11 +1,11 @@
 import NewsHero from '../components/news/NewsHero'
-import NewsGrid from '../components/news/NewsGrid'
+import ComingSoon from '../components/ui/ComingSoon'
 
 export default function NewsPage() {
   return (
     <>
       <NewsHero />
-      <NewsGrid />
+      <ComingSoon message="We're preparing this section with the latest news and events from CCSL. Check back soon." />
     </>
   )
 }

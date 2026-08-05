@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 export default function ContactHero() {
   return (
-    <section className="bg-primary-800 pt-20 pb-14 relative overflow-hidden">
+    <section className="bg-primary-800 pt-28 lg:pt-32 pb-14 relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-[0.04]"
         style={{
