@@ -59,16 +59,13 @@ export default function WhoWeAreSection() {
           {/* Visual */}
           <ScrollReveal direction="left" delay={0.15}>
             <div className="relative">
-              {/* Main image area — replace with real company photo */}
-              <div className="aspect-[4/3] bg-gradient-to-br from-primary-700 to-primary-900 rounded-2xl overflow-hidden shadow-2xl">
-                <div className="w-full h-full flex items-center justify-center text-white/20 text-sm">
-                  Company / facility photo
-                </div>
-              </div>
-              {/* Accent card */}
-              <div className="absolute -bottom-6 -left-6 bg-accent-500 text-primary-900 rounded-xl px-6 py-4 shadow-xl">
-                <div className="text-2xl font-bold">ISO 9001:2015</div>
-                <div className="text-primary-900/70 text-sm font-medium">Quality Certified</div>
+              {/* Main image area */}
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src={`${import.meta.env.BASE_URL}images/other/building.jpg`}
+                  alt="Clear Communication Systems Ltd. facility"
+                  className="w-full h-full object-cover"
+                />
               </div>
               {/* Decorative border */}
               <div className="absolute -top-4 -right-4 w-full h-full border-2 border-accent-400/30 rounded-2xl pointer-events-none" />

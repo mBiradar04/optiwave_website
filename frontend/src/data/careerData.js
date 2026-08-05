@@ -1,8 +1,7 @@
 // All Career page content in one place.
 // Update JOBS to add or remove roles. Update CULTURE to change values.
 
-// TODO: Replace with real careers email when provided by client
-export const CAREERS_EMAIL = 'careers@clearcommunicationsystems.com'
+export const CAREERS_EMAIL = 'info@optiwavephotonics.com'
 
 export const CULTURE = [
   {

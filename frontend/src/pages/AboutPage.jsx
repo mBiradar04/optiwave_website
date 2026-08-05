@@ -2,7 +2,6 @@ import AboutHero           from '../components/about/AboutHero'
 import AboutSubNav         from '../components/about/AboutSubNav'
 import StrengthsSection    from '../components/about/StrengthsSection'
 import PartnersSection     from '../components/about/PartnersSection'
-import TestimonialsSection from '../components/about/TestimonialsSection'
 import HistorySection      from '../components/about/HistorySection'
 
 export default function AboutPage() {
@@ -26,8 +25,6 @@ export default function AboutPage() {
             <StrengthsSection />
             <div className="h-px bg-steel-200" />
             <PartnersSection />
-            <div className="h-px bg-steel-200" />
-            <TestimonialsSection />
           </div>
         </div>
       </section>

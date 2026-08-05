@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 const SLIDES = [
   {
     id: 1,
-    image: '/images/hero/hero-1.png',
+    image: '/images/hero/hero-1.jpeg',
     gradient: 'from-primary-900 via-primary-800 to-primary-700',
     eyebrow: 'RF over Fiber Technology',
     headline: ['Precision.', 'Reliability.', 'Trusted by', 'Defence Leaders.'],
@@ -45,27 +45,24 @@ const SLIDES = [
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0)
-  const [direction, setDirection] = useState(1)
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setDirection(1)
       setCurrent((prev) => (prev + 1) % SLIDES.length)
     }, 6000)
     return () => clearInterval(timer)
   }, [])
 
   const goTo = (idx) => {
-    setDirection(idx > current ? 1 : -1)
     setCurrent(idx)
   }
 
   const slide = SLIDES[current]
 
   const slideVariants = {
-    enter:  (d) => ({ opacity: 0, x: d > 0 ? 60 : -60 }),
-    center: { opacity: 1, x: 0, transition: { duration: 0.50, ease: [0.22, 1, 0.36, 1] } },
-    exit:   (d) => ({ opacity: 0, x: d > 0 ? -60 : 60, transition: { duration: 0.5 } }),
+    enter:  { opacity: 0 },
+    center: { opacity: 1, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+    exit:   { opacity: 0, transition: { duration: 0.5 } },
   }
 
   const wordVariants = {
@@ -81,10 +78,9 @@ export default function HeroSection() {
     <section className="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden">
 
       {/* Background slides */}
-      <AnimatePresence custom={direction} mode="sync">
+      <AnimatePresence mode="sync">
         <motion.div
           key={current}
-          custom={direction}
           variants={slideVariants}
           initial="enter"
           animate="center"

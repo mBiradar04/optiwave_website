@@ -24,17 +24,15 @@ export const STRENGTHS = [
   },
 ]
 
-// Set logo to '/images/partners/name.png' when logos are available.
-// Drop files into public/images/partners/.
+// logo paths are relative to the app's BASE_URL (set null when no logo is available).
+// DRDO labs (LRDE/RCI/DLRL/ADRDE) are consolidated under one DRDO logo — see aboutData
+// history / project docs for the full per-lab breakdown if needed elsewhere.
 export const PARTNERS = [
-  { id: 1, name: 'BEL',         logo: null },
-  { id: 2, name: 'DRDO — LRDE', logo: null },
-  { id: 3, name: 'DRDO — RCI',  logo: null },
-  { id: 4, name: 'DRDO — DLRL', logo: null },
-  { id: 5, name: 'DRDO — ADRDE',logo: null },
-  { id: 6, name: 'ISRO',        logo: null },
-  { id: 7, name: 'HAL',         logo: null },
-  { id: 8, name: 'ComAvia',     logo: null },
+  { id: 1, name: 'BEL',     logo: 'images/clients/bel.jpg'  },
+  { id: 2, name: 'DRDO',    logo: 'images/clients/drdo.png' },
+  { id: 3, name: 'ISRO',    logo: 'images/clients/isro.svg' },
+  { id: 4, name: 'HAL',     logo: 'images/clients/hal.png'  },
+  { id: 5, name: 'ComAvia', logo: null },
 ]
 
 // Placeholder testimonials — replace with real client quotes when collected.

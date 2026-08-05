@@ -6,8 +6,8 @@ export default function CareerPage() {
   return (
     <>
       <CareerHero />
-      <CultureSection />
       <JobListings />
+      <CultureSection />
     </>
   )
 }

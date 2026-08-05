@@ -1,45 +1,9 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import ScrollReveal from '../ui/ScrollReveal'
-import { JOBS, CAREERS_EMAIL } from '../../data/careerData'
-
-// Builds a mailto link pre-filled with the job title and a basic application template
-function buildApplyMailto(job) {
-  const subject = encodeURIComponent(`Job Application: ${job.title}`)
-  const body = encodeURIComponent(
-    [
-      `I would like to apply for the position of ${job.title} (${job.department}, ${job.location}).`,
-      '',
-      'Name:',
-      'Email:',
-      'Phone:',
-      'LinkedIn / Portfolio:',
-      'Years of relevant experience:',
-      '',
-      'Cover note:',
-    ].join('\n')
-  )
-  return `mailto:${CAREERS_EMAIL}?subject=${subject}&body=${body}`
-}
-
-// Builds the open application mailto
-function buildOpenMailto() {
-  const subject = encodeURIComponent('Open Application — Defence Company')
-  const body = encodeURIComponent(
-    [
-      'I am interested in joining your team and would like to submit an open application.',
-      '',
-      'Name:',
-      'Email:',
-      'Phone:',
-      'Area of expertise:',
-      'LinkedIn / Portfolio:',
-      '',
-      'About me and what I can contribute:',
-    ].join('\n')
-  )
-  return `mailto:${CAREERS_EMAIL}?subject=${subject}&body=${body}`
-}
+import ApplyModal from './ApplyModal'
+import { JOBS } from '../../data/careerData'
 
 const DEPT_COLORS = {
   Engineering: 'bg-primary-50 text-primary-700 border-primary-200',
@@ -55,6 +19,7 @@ const card = {
 
 export default function JobListings() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
+  const [applyFor, setApplyFor] = useState(null)
 
   return (
     <section className="py-20 lg:py-28 bg-steel-100">
@@ -69,8 +34,8 @@ export default function JobListings() {
               Current openings
             </h2>
             <p className="text-steel-500 max-w-lg mx-auto">
-              All roles are based in Udupi unless stated otherwise.
-              Click Apply to open your email client with the role pre-filled.
+              All roles are based in Hyderabad unless stated otherwise.
+              Click Apply to fill out a short application form.
             </p>
           </div>
         </ScrollReveal>
@@ -123,15 +88,15 @@ export default function JobListings() {
 
                 {/* Right — apply button */}
                 <div className="flex-shrink-0">
-                  <a
-                    href={buildApplyMailto(job)}
+                  <button
+                    onClick={() => setApplyFor(job.title)}
                     className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-400 text-primary-900 font-bold text-sm px-5 py-2.5 rounded-lg transition-all duration-200 hover:scale-105 active:scale-95 whitespace-nowrap"
                   >
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                     </svg>
                     Apply
-                  </a>
+                  </button>
                 </div>
 
               </div>
@@ -158,20 +123,22 @@ export default function JobListings() {
                 and sales professionals. Send us an open application and we will keep
                 you in mind for future roles.
               </p>
-              <a
-                href={buildOpenMailto()}
+              <button
+                onClick={() => setApplyFor('Open Application')}
                 className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-400 text-primary-900 font-bold text-sm px-6 py-3 rounded-lg transition-all duration-200 hover:scale-105 active:scale-95"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                 </svg>
                 Send Open Application
-              </a>
+              </button>
             </div>
           </div>
         </ScrollReveal>
 
       </div>
+
+      <ApplyModal position={applyFor} onClose={() => setApplyFor(null)} />
     </section>
   )
 }

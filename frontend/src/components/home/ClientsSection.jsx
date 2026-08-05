@@ -7,9 +7,18 @@ async function fetchClients() {
   return data
 }
 
-// Shown when no clients are in the DB yet — replace with real logos once available
+// Shown when no clients are in the DB yet.
+// Logos sourced from Wikimedia Commons / official org sites — verify these
+// are the client's approved current versions before final production launch.
 const FALLBACK_CLIENTS = [
-  'BEL', 'DRDO — LRDE', 'DRDO — RCI', 'ISRO', 'HAL', 'DRDO — DLRL',
+  { name: 'Bharat Electronics Limited',                  logo: 'images/clients/bel.jpg'  },
+  { name: 'Defence Research and Development Organisation', logo: 'images/clients/drdo.png' },
+  { name: 'Indian Space Research Organisation',           logo: 'images/clients/isro.svg' },
+  { name: 'Hindustan Aeronautics Limited',                logo: 'images/clients/hal.png'  },
+  { name: 'Bharat Electronics Limited',                  logo: 'images/clients/bel.jpg'  },
+  { name: 'Defence Research and Development Organisation', logo: 'images/clients/drdo.png' },
+  { name: 'Indian Space Research Organisation',           logo: 'images/clients/isro.svg' },
+  { name: 'Hindustan Aeronautics Limited',                logo: 'images/clients/hal.png'  },
 ]
 
 export default function ClientsSection() {
@@ -27,7 +36,7 @@ export default function ClientsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
         <ScrollReveal>
           <p className="text-center text-steel-400 text-sm font-medium tracking-widest uppercase">
-            Trusted by organisations across India and beyond
+            Trusted by India's leading defence and space organisations
           </p>
         </ScrollReveal>
       </div>
@@ -56,7 +65,7 @@ export default function ClientsSection() {
                           <img
                             src={client.logo}
                             alt={client.name}
-                            className="h-8 w-auto object-contain opacity-50 hover:opacity-80 transition-opacity grayscale hover:grayscale-0"
+                            className="h-8 w-auto object-contain opacity-80 hover:opacity-100 transition-all duration-200 hover:scale-110"
                           />
                         ) : (
                           <span className="text-steel-400 font-semibold text-sm tracking-wide px-4">
@@ -65,11 +74,13 @@ export default function ClientsSection() {
                         )}
                       </div>
                     ))
-                  : FALLBACK_CLIENTS.map((name) => (
-                      <div key={`${dupIdx}-${name}`} className="flex-shrink-0">
-                        <span className="text-steel-300 font-semibold text-sm tracking-wide px-4 py-2 border border-steel-200 rounded-lg">
-                          {name}
-                        </span>
+                  : FALLBACK_CLIENTS.map((client) => (
+                      <div key={`${dupIdx}-${client.name}`} className="flex-shrink-0 h-10 flex items-center">
+                        <img
+                          src={`${import.meta.env.BASE_URL}${client.logo}`}
+                          alt={client.name}
+                          className="h-8 sm:h-10 w-auto object-contain opacity-80 hover:opacity-100 transition-all duration-200 hover:scale-110"
+                        />
                       </div>
                     ))
               }
