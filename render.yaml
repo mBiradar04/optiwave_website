@@ -1,16 +1,11 @@
 # Render Blueprint — deploys all three pieces of the site (frontend, backend,
 # database) in one go: Render dashboard → "New +" → "Blueprint" → this repo.
-#
-# NOTE: Render restructured Postgres pricing in April 2026 to bill compute and
-# storage separately. If the `plan` / `diskSizeGB` fields below are rejected by
-# the Blueprint parser, open the database in Render's UI and set them there
-# directly instead — everything else in this file is unaffected.
 
 databases:
   - name: ccsl-db
     databaseName: ccsl
     user: ccsl
-    plan: basic
+    plan: starter
     diskSizeGB: 1
     region: singapore
 
@@ -37,22 +32,24 @@ services:
         fromDatabase:
           name: ccsl-db
           property: connectionString
+      # Placeholder Render subdomains -- swap for the real custom domains
+      # once optiwavephotonics.com / api.optiwavephotonics.com are pointed
+      # here, then redeploy.
       - key: ALLOWED_HOSTS
-        value: api.optiwavephotonics.com
+        value: ccsl-api.onrender.com
       - key: CORS_ALLOWED_ORIGINS
-        value: https://optiwavephotonics.com,https://www.optiwavephotonics.com
+        value: https://ccsl-website.onrender.com
 
   # Frontend — the built React site, served as static files
   - type: web
     name: ccsl-website
     runtime: static
-    region: singapore
     rootDir: frontend
     buildCommand: "npm install && npm run build"
     staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
-        value: https://api.optiwavephotonics.com/api
+        value: https://ccsl-api.onrender.com/api
     routes:
       # SPA fallback so direct links / refreshes on e.g. /products work
       - type: rewrite
