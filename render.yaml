@@ -37,13 +37,10 @@ services:
         fromDatabase:
           name: ccsl-db
           property: connectionString
-      # Placeholder Render subdomains -- swap for the real custom domains
-      # once optiwavephotonics.com / api.optiwavephotonics.com are pointed
-      # here, then redeploy.
       - key: ALLOWED_HOSTS
-        value: ccsl-api.onrender.com
+        value: api.optiwavephotonics.com
       - key: CORS_ALLOWED_ORIGINS
-        value: https://ccsl-website.onrender.com
+        value: https://optiwavephotonics.com,https://www.optiwavephotonics.com
 
   # Frontend — the built React site, served as static files
   - type: web
@@ -55,7 +52,7 @@ services:
     staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
-        value: https://ccsl-api.onrender.com/api
+        value: https://api.optiwavephotonics.com/api
     routes:
       # SPA fallback so direct links / refreshes on e.g. /products work
       - type: rewrite
