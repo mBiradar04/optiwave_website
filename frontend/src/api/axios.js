@@ -19,12 +19,20 @@ api.interceptors.request.use(
   (error) => Promise.reject(error)
 )
 
-// Response interceptor — handle 401 gracefully
+// Response interceptor — handle 401 gracefully and retry once without stale tokens
 api.interceptors.response.use(
   (response) => response,
-  (error) => {
+  async (error) => {
+    const originalRequest = error.config
+
     if (error.response?.status === 401) {
       localStorage.removeItem('access_token')
+
+      if (originalRequest && !originalRequest._retry) {
+        originalRequest._retry = true
+        delete originalRequest.headers.Authorization
+        return api(originalRequest)
+      }
     }
     return Promise.reject(error)
   }
