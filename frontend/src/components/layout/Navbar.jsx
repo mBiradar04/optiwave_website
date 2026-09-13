@@ -139,8 +139,8 @@ export default function Navbar() {
                       className={({ isActive }) =>
                         `block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                           isActive
-                            ? 'bg-accent-500/20 text-accent-400'
-                            : 'text-white/80 hover:bg-white/10 hover:text-white'
+                            ? 'bg-accent-500/20 text-accent-600'
+                            : 'text-steel-500 hover:bg-steel-100 hover:text-primary-800'
                         }`
                       }
                     >
