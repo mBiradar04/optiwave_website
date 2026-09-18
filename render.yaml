@@ -5,7 +5,7 @@ databases:
   - name: ccsl-db
     databaseName: ccsl
     user: ccsl
-    plan: 0.5c-1g
+    plan: 0.1c-256mb
     diskSizeGB: 1
     region: singapore
 
