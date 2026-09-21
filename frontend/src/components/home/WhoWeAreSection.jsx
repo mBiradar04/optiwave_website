@@ -41,7 +41,7 @@ export default function WhoWeAreSection() {
                   to="/about"
                   className="inline-flex items-center gap-2 bg-primary-800 hover:bg-primary-700 text-white font-semibold text-sm px-6 py-3 rounded transition-all duration-200 hover:scale-105 active:scale-95"
                 >
-                  Our Story
+                  About Us
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
