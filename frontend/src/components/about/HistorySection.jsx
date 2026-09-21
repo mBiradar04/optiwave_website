@@ -61,7 +61,7 @@ export default function HistorySection() {
               Our journey
             </p>
             <h2 className="text-3xl lg:text-4xl font-bold text-primary-800">
-              From distributor to defence technology company
+              From optical test &amp; measurement to defence photonics
             </h2>
           </div>
         </ScrollReveal>

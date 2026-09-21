@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import ProductCard from './ProductCard'
+import ProductListItem from './ProductListItem'
 
 const container = {
   hidden: {},
@@ -10,28 +10,26 @@ const item = {
   show:   { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
 }
 
-function SkeletonCard() {
+function SkeletonRow() {
   return (
-    <div className="bg-white rounded-2xl overflow-hidden border border-steel-200 animate-pulse">
-      <div className="aspect-[16/10] bg-steel-200" />
-      <div className="p-5">
-        <div className="h-5 bg-steel-200 rounded mb-3 w-3/4" />
+    <div className="flex flex-col sm:flex-row bg-white rounded-2xl overflow-hidden border border-steel-200 animate-pulse">
+      <div className="sm:w-64 lg:w-80 aspect-[16/10] sm:aspect-auto sm:min-h-[12rem] bg-steel-200" />
+      <div className="p-5 lg:p-7 flex-1">
+        <div className="h-3 bg-steel-100 rounded mb-3 w-1/6" />
+        <div className="h-5 bg-steel-200 rounded mb-3 w-1/2" />
         <div className="h-3 bg-steel-100 rounded mb-2" />
-        <div className="h-3 bg-steel-100 rounded w-5/6 mb-4" />
-        <div className="h-3 bg-steel-100 rounded w-1/4" />
+        <div className="h-3 bg-steel-100 rounded w-5/6" />
       </div>
     </div>
   )
 }
 
-export default function ProductGrid({ products, isLoading, activeType, onCardClick }) {
+export default function ProductList({ products, isLoading, activeType }) {
   if (isLoading) {
     return (
       <section className="py-12 lg:py-16 bg-steel-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {Array(6).fill(null).map((_, i) => <SkeletonCard key={i} />)}
-          </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-5">
+          {Array(3).fill(null).map((_, i) => <SkeletonRow key={i} />)}
         </div>
       </section>
     )
@@ -61,15 +59,11 @@ export default function ProductGrid({ products, isLoading, activeType, onCardCli
             initial="hidden"
             animate="show"
             exit={{ opacity: 0, transition: { duration: 0.15 } }}
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="flex flex-col gap-5"
           >
             {products.map((product, i) => (
               <motion.div key={product.id} variants={item}>
-                <ProductCard
-                  product={product}
-                  index={i}
-                  onClick={() => onCardClick(product)}
-                />
+                <ProductListItem product={product} index={i} />
               </motion.div>
             ))}
           </motion.div>

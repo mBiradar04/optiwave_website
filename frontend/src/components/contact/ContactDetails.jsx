@@ -41,14 +41,14 @@ const DETAILS = [
       </svg>
     ),
     label: 'Email',
-    value: 'info@optiwavephotonics.com',
-    href:  'mailto:info@optiwavephotonics.com',
+    value: 'sales@optiwavephotonics.com',
+    href:  'mailto:sales@optiwavephotonics.com',
   },
 ]
 
 const HOURS = [
-  { day: 'Monday – Friday', time: '9:00 AM – 6:00 PM' },
-  { day: 'Saturday',        time: '9:00 AM – 1:00 PM' },
+  { day: 'Monday – Friday', time: '10:00 AM – 6:00 PM' },
+  { day: 'Saturday',        time: '10:00 AM – 4:00 PM' },
   { day: 'Sunday',          time: 'Closed'             },
 ]
 

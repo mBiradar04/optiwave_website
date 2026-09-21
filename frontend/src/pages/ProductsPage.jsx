@@ -3,12 +3,10 @@ import { useQuery } from '@tanstack/react-query'
 import api from '../api/axios'
 import ProductsHero  from '../components/products/ProductsHero'
 import CategoryTabs  from '../components/products/CategoryTabs'
-import ProductGrid   from '../components/products/ProductGrid'
-import ProductModal  from '../components/products/ProductModal'
+import ProductList   from '../components/products/ProductList'
 
 export default function ProductsPage() {
-  const [activeType,       setActiveType]       = useState(null) // null = All
-  const [selectedProduct,  setSelectedProduct]  = useState(null)
+  const [activeType, setActiveType] = useState(null) // null = All
 
   // Fetch product type list for category tabs
   const { data: typesData } = useQuery({
@@ -49,17 +47,12 @@ export default function ProductsPage() {
           </div>
         </section>
       ) : (
-        <ProductGrid
+        <ProductList
           products={products}
           isLoading={isLoading}
           activeType={activeType}
-          onCardClick={setSelectedProduct}
         />
       )}
-      <ProductModal
-        product={selectedProduct}
-        onClose={() => setSelectedProduct(null)}
-      />
     </>
   )
 }

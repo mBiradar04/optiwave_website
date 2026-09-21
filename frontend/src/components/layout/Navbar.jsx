@@ -8,7 +8,6 @@ const NAV_LINKS = [
   { to: '/products', label: 'Products' },
   { to: '/career',   label: 'Career' },
   { to: '/news',     label: 'News' },
-  { to: '/gallery',  label: 'Gallery' },
 ]
 
 export default function Navbar() {

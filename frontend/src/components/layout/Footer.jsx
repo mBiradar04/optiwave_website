@@ -5,17 +5,15 @@ const QUICK_LINKS = [
   { to: '/products', label: 'Products'     },
   { to: '/career',   label: 'Career'       },
   { to: '/news',     label: 'News & Events'},
-  { to: '/gallery',  label: 'Gallery'      },
   { to: '/contact',  label: 'Contact Us'   },
 ]
 
 const SOLUTIONS = [
-  { to: '/products', label: 'RF over Fiber (RFoF) Systems'   },
-  { to: '/products', label: 'Optical Delay Lines (ODL)'      },
-  { to: '/products', label: 'Optical Transmitting Units (OTU)'},
-  { to: '/products', label: 'Optical Receiver Modules (ORM)' },
-  { to: '/products', label: 'Photonic Distribution Units'    },
-  { to: '/products', label: 'Optical Components & Instruments'},
+  { to: '/products', label: 'Radio over Fiber'             },
+  { to: '/products', label: 'Signal over Fiber'            },
+  { to: '/products', label: 'Photonic Distribution Modules'},
+  { to: '/products', label: 'Photonic Delay Lines'         },
+  { to: '/products', label: 'Photonic RF-IF Translators'   },
 ]
 
 export default function Footer() {
@@ -35,9 +33,8 @@ export default function Footer() {
               />
             </div>
             <p className="text-white/50 text-sm leading-relaxed mb-6">
-              Advanced RF & Optical Innovations. Trusted partner of BEL, DRDO,
-              ISRO, and HAL for RF over Fiber and photonic communication systems
-              since 2003.
+              Advanced Photonic innovations for EW environments. Trusted by
+              leading industry partners for Defense Solutions since 2003.
             </p>
             <div className="space-y-2 text-sm text-white/45">
               <div className="flex items-start gap-2">
@@ -57,7 +54,7 @@ export default function Footer() {
                 <svg className="w-4 h-4 text-accent-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                 </svg>
-                <span>info@optiwavephotonics.com</span>
+                <span>sales@optiwavephotonics.com</span>
               </div>
             </div>
           </div>
@@ -98,11 +95,11 @@ export default function Footer() {
             <div className="space-y-2 text-sm text-white/45 mb-8">
               <div className="flex justify-between">
                 <span>Monday – Friday</span>
-                <span className="text-white/65">9:00 – 18:00</span>
+                <span className="text-white/65">10:00 – 18:00</span>
               </div>
               <div className="flex justify-between">
                 <span>Saturday</span>
-                <span className="text-white/65">9:00 – 13:00</span>
+                <span className="text-white/65">10:00 – 16:00</span>
               </div>
               <div className="flex justify-between">
                 <span>Sunday</span>

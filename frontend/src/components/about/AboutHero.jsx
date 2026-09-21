@@ -51,8 +51,8 @@ export default function AboutHero() {
           transition={{ duration: 0.5, delay: 0.25 }}
           className="text-white/55 text-base lg:text-lg max-w-2xl leading-relaxed"
         >
-          From a small communication equipment distributor to a full-spectrum defence
-          technology company — this is our story.
+          From an Optical Test and Measurement producer for the Telecom industry to an
+          Advanced Defence Photonics Company — this is our story.
         </motion.p>
 
       </div>
